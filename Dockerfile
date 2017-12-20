@@ -12,11 +12,9 @@ RUN apk --no-cache add tini nodejs-npm
 ARG PROJ_ROOT=/usr/local
 ARG COMMIT=master
 ARG PROJ_DESTINATION=$PROJ_ROOT/gitproj
-
 ARG ORG=CymaticLabs
 ARG PROJ=GrafanaSimpleJsonValueMapper
 ARG GIT_URL=https://github.com/$ORG/$PROJ/archive/$COMMIT.zip
-
 ADD $GIT_URL $PROJ_DESTINATION/
 
 WORKDIR $PROJ_DESTINATION
