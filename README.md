@@ -5,9 +5,9 @@ Docker container for setting up [GrafanaSimpleJsonValueMapper](https://github.co
 
 ## Providing your own aliases
 
-Edit the `data.json` file in this repository. This will be copied into the docker container, in place of the `server/data.json` that `GrafanaSimpleValueMapper` reads from.
+Edit the `data.json` file in this repository. This will be copied into the Docker container, in place of the `server/data.json` that `GrafanaSimpleValueMapper` reads from.
 
-Any time you edit the `data.json` file, you'll need to rebuild the docker file; there is nothing like hot-module replacement involved.
+Any time you edit the `data.json` file, you'll need to rebuild the Docker container; there is nothing like hot-module replacement involved.
 
 ## Building the container
 
