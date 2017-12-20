@@ -1,8 +1,3 @@
-# docker build . --tag=jsonmapper
-# docker build . --build-arg COMMIT=ce0999b342f4e8e861509e7ce3def5d9a7debf10 --tag=jsonmapper
-
-# docker run -it --rm -p 3003:3003 jsonmapper
-
 FROM alpine:3.7
 
 EXPOSE 3003
