@@ -1,8 +1,4 @@
-FROM alpine:3.7
-
-EXPOSE 3003
-
-RUN apk --no-cache add tini nodejs-npm
+RUN apk --no-cache add tini nodejs-npm yarn
 
 ARG PROJ_ROOT=/usr/local
 ARG COMMIT=master
@@ -18,11 +14,13 @@ RUN unzip $COMMIT.zip -qq && rm $COMMIT.zip && mv $PROJ-* $PROJ;
 
 WORKDIR $PROJ_DESTINATION/$PROJ
 
-RUN npm install;
+# npm fails to connect on Ubuntu host, somehow. Possible Docker bug; doesn't occur on macOS host.
+# RUN npm install;
+RUN yarn install;
 
 COPY data.json server/
 
-# TODO: make clean-up routine.
+# TODO: make clean-up routine. Can remove yarn at this point.
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
