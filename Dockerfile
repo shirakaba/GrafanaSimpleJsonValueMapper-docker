@@ -9,7 +9,6 @@ EXPOSE 3003
 
 RUN apk --no-cache add tini nodejs-npm
 
-# ARG COMMIT=ce0999b342f4e8e861509e7ce3def5d9a7debf10
 ARG PROJ_ROOT=/usr/local
 ARG COMMIT=master
 ARG PROJ_DESTINATION=$PROJ_ROOT/gitproj
