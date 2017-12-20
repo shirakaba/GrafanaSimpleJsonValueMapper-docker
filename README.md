@@ -17,7 +17,7 @@ Run this script for the default build behaviour:
 docker build . --tag=jsonmapper
 ```
 
-To download a particular commit from a particular fork (here, I would download the `ce0999b342f4e8e861509e7ce3def5d9a7debf10` commit forked from my own GitHub account, `shirakaba`):
+To download a particular commit of `GrafanaSimpleJsonValueMapper` from a particular fork (eg. the `ce0999b342f4e8e861509e7ce3def5d9a7debf10` commit forked from my own GitHub account, `shirakaba`):
 
 ```sh
 docker build . --build-arg ORG=shirakaba --build-arg COMMIT=ce0999b342f4e8e861509e7ce3def5d9a7debf10 --tag=jsonmapper
