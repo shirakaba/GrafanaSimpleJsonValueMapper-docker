@@ -1,8 +1,3 @@
 #!/usr/bin/env bash
 cd -- "$(dirname "$BASH_SOURCE")"
-
-./stop.sh
-./build.sh
-./run.sh
-x
-
+sudo docker run -d --rm -p 3003:3003 jsonmapper
