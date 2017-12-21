@@ -3,6 +3,8 @@ Docker container for setting up [GrafanaSimpleJsonValueMapper](https://github.co
 
 # Setup
 
+First, download this repository (either as a `.zip` – in which case you'll need to subsequently unzip it of course – or by using `git clone`). Open and/or `cd` into the repository.
+
 ## Providing your own aliases
 
 Edit the `data.json` file in this repository. This will be copied into the Docker container, in place of the `server/data.json` that `GrafanaSimpleValueMapper` reads from.
