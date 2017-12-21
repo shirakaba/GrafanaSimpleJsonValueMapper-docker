@@ -62,3 +62,9 @@ docker rm $(docker stop $(docker ps -a -q --filter="ancestor=jsonmapper" --forma
 Simply run `restart.sh`. You may need to give it executable permissions with `chmod +x restart.sh` beforehand.
 
 This command will stop any running instances, rebuild them, then run them again (in detached mode).
+
+# Usage
+
+Once the Docker container is running, run `curl "http://localhost:3003"` (where `3003` is the port you mapped it to on your **host**) to assess whether you can connect to it. It should respond with a simple landing web-page (in HTML format).
+
+Following the installation steps from the [GrafanaSimpleJsonValueMapper readme](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper), complete the **[Configure a SimpleJson datasource](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper#configure-a-simplejson-datasource)** step, then test the `GrafanaSimpleJsonValueMapper` server by setting up your own template variable.
