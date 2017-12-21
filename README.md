@@ -43,10 +43,22 @@ To override the default command with your own (eg. to run the shell), just add f
 docker run -it --rm -p 3003:3003 jsonmapper sh
 ```
 
-## Killing the container
+## Killing/removing the container
 
-You can view all running Docker containers with `docker ps`. If the tag for your container is indeed `jsonmapper`, you can kill it with:
+You can view all running Docker containers with `docker ps` and kill them by their container name manually, or use this [automatic command](https://stackoverflow.com/a/32074098/5951226):
 
 ```sh
-docker kill jsonmapper
+docker stop $(docker ps -a -q --filter="ancestor=jsonmapper" --format="{{.ID}}")
 ```
+
+You can furthermore remove it in the same step by wrapping the command with a `docker rm`:
+
+```sh
+docker rm $(docker stop $(docker ps -a -q --filter="ancestor=jsonmapper" --format="{{.ID}}"))
+```
+
+## Restarting the container
+
+Simply run `restart.sh`. You may need to give it executable permissions with `chmod +x restart.sh` beforehand.
+
+This command will stop any running instances, rebuild them, then run them again (in detached mode).
