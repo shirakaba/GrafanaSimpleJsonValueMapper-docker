@@ -1,12 +1,12 @@
 {
-    "IoT Outside": {
-        "03e79c66-d624-459d-9a6c-caa40c428c29": "Camera North",
-        "b61a9967-7363-4d6b-a51c-27b5a539eba5": "Camera South",
-        "a0caf0b9-e5f0-4a54-b6fe-7eb8a692b3c9": "Camera East",
-        "4d84b539-e81c-4341-a97d-aa5f133b6ee3": "Camera West"
-    },
-    "IoT Inside": {
-        "bd683289-ae38-4c09-9826-17c6243b7621": "Temperature Sensor",
-        "9513dff8-6b32-4450-88ca-33786a147142": "Living Room Lights"
+    "list": [
+        "value1",
+        "value2",
+        "value3"
+    ],
+    "lookup": {
+        "value1": "Value 1",
+        "value2": "Value 2",
+        "value3": "Value 3"
     }
 }
