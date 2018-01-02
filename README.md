@@ -87,7 +87,7 @@ curl 'http://localhost:3003/search' \
 { data: 'list', id: 'value1' }
 ```
 
-... Which should generate a response resembling this (note: I can't recall whether a single-value payload for `text` will return an array or just a single string; would have to go back and check):
+... Which should generate a response resembling this *(**Note:** I can't recall whether a single-value payload for `text` will return an array or just a single string; would have to go back and check)*:
 
 ```bash
 [ { text: [ 'value1' ], value: 'value1' } ]
