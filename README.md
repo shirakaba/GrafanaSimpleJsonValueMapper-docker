@@ -69,4 +69,29 @@ This command will stop any running instances, rebuild them, then run them again 
 
 Once the Docker container is running, run `curl "http://localhost:3003"` (where `3003` is the port you mapped it to on your **host**) to assess whether you can connect to it. It should respond with a simple landing web-page (in HTML format).
 
-Following the installation steps from the [GrafanaSimpleJsonValueMapper readme](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper), complete the **[Configure a SimpleJson datasource](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper#configure-a-simplejson-datasource)** step, then test the `GrafanaSimpleJsonValueMapper` server by following the **[Creating Template Variables](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper#creating-template-variables)** step.
+Following the installation steps from the [GrafanaSimpleJsonValueMapper readme](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper), complete the **[Configure a SimpleJson datasource](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper#configure-a-simplejson-datasource)** step.
+
+You can test whether your server is running & responding with the following curl:
+
+```bash
+curl 'http://localhost:3003/search' \
+ -H 'Content-Type: application/json' \
+ -H 'Accept: application/json, text/plain, */*' \
+ -H 'DNT: 1' --data-binary '{"target":"{\"data\":\"list\", \"id\":\"value1\"}"}' --compressed \
+ && echo;
+```
+
+... This forms the request:
+
+```bash
+{ data: 'list', id: 'value1' }
+```
+
+... Which should generate a response resembling this (note: I can't recall whether a single-value payload for `text` will return an array or just a single string; would have to go back and check):
+
+```bash
+[ { text: [ 'value1' ], value: 'value1' } ]
+```
+
+You can then test the `GrafanaSimpleJsonValueMapper` server by following the **[Creating Template Variables](https://github.com/CymaticLabs/GrafanaSimpleJsonValueMapper#creating-template-variables)** step.
+
